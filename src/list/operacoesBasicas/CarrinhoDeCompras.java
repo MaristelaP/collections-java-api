@@ -42,7 +42,16 @@ public class CarrinhoDeCompras {
     }
 
     public void exibirItens() {
-        System.out.println(itens);
+        for (Item item : itens) {
+            System.out.println(item);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "CarrinhoDeCompras{" +
+                "itens=" + itens +
+                '}';
     }
 
     public static void main(String[] args) {
@@ -57,6 +66,8 @@ public class CarrinhoDeCompras {
 
         carrinhoDeCompras.removerItem("caneta");
         carrinhoDeCompras.exibirItens();
+
+        System.out.println("O valor total da compra é = " + carrinhoDeCompras.calcularValorTotal(1.0,3));
 
     }
 }
